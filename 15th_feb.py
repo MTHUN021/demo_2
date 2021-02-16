@@ -141,15 +141,18 @@ class box():
 
 
 class ipaddress():
-     def __init__(self, int_address):
+    def __init__(self, int_address):
          self.address = int_address
     
-     def address_str(self):
-         s = ""
-         k = 3
-         while k >=0:
+    def __divmod__(self, x):
+        return self.address // x
+
+    def address_str(self):
+        s = ""
+        k = 3
+        while k >=0:
             s += str((self.address // pow(256, k))%256) + "."
             k -= 1
 
-         return s[:-1]
+        return s[:-1]
 
