@@ -1,5 +1,4 @@
-#Mobile Billing customer class //
-
+#Mobile Billing customer class
 class mobile_billing():
     def __init__(self, time, sms, service, carry_amt, addon):
         self.time = time            # total outgoing call time
@@ -23,10 +22,9 @@ class mobile_billing():
             self.bill = self.bill +  10
         return self.bill
 
-a1 = mobile_billing(1731, 90, "PREPAID", 1500, False)
 
-#Bank account class
 
+#Bank account class 
 class Bank_account():
 
     def __init__(self, account_no, balance, overdraft):
@@ -42,12 +40,15 @@ class Bank_account():
     
     def debit(self, value):
         self.balance -= value
+    
+    def comp_int(self, n):
+        self.balance *= (1+self.interest_rate)*n   # n in years
 
     def __str__(self):
         return f"No.{self.account_no} with Total Balance(balance - overdraft) = Rs.{self.balance - self.overdraft}"
 
                     
-# Color class //
+# Color class
 class color():
     
     def __init__(self, hex_value):
@@ -58,9 +59,9 @@ class color():
     def form_color(self):
         pass
 
-c1 = color((222,11,99))
 
-# Point class //
+
+# Point class
 class Point():
 
     def __init__(self, x, y):
@@ -80,7 +81,7 @@ class Point():
                 return 4
             
     def __str__(self):
-        return f"({self.p1}, {self.p2})
+        return f"({self.p1}, {self.p2})"
     
     def dist_origin(self):        # returns distance of the point from origin
         return round(pow((self.x**2 + self.y**2), 0.5), 3)
@@ -101,4 +102,3 @@ class box():
     
     def display(self):
         print(f"Length = {self.length}, Breadth = {self.breadth}, Height = {self.height}")
-
