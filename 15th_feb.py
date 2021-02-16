@@ -89,6 +89,7 @@ class Point():
     def dist_origin(self):        # returns distance of the point from origin
         return round(pow((self.x**2 + self.y**2), 0.5), 3)
 
+#Class Circle/Rectangle/Triangle
 class circle():
     def __init__(self, radius):
         self.radius = radius
@@ -126,7 +127,6 @@ class rectangle():
 
 
 #Class Box
-
 class box():
     def __init__(self, length, breadth, height):
         self.length = length
@@ -139,13 +139,10 @@ class box():
     def display(self):
         print(f"Length = {self.length}, Breadth = {self.breadth}, Height = {self.height}")
 
-
+#class IP address
 class ipaddress():
     def __init__(self, int_address):
          self.address = int_address
-    
-    def __divmod__(self, x):
-        return self.address // x
 
     def address_str(self):
         s = ""
@@ -155,4 +152,3 @@ class ipaddress():
             k -= 1
 
         return s[:-1]
-
