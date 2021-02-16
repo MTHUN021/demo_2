@@ -84,7 +84,7 @@ class Point():
                 return 4
             
     def __str__(self):
-        return f"({self.p1}, {self.p2})"
+        return f"({self.x}, {self.y})"
     
     def dist_origin(self):        # returns distance of the point from origin
         return round(pow((self.x**2 + self.y**2), 0.5), 3)
