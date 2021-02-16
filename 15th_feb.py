@@ -24,6 +24,28 @@ class mobile_billing():
         return self.bill
 
 a1 = mobile_billing(1731, 90, "PREPAID", 1500, False)
+
+#Bank account class
+
+class Bank_account():
+
+    def __init__(self, account_no, balance, overdraft):
+        self.account_no = account_no
+        self.balance = balance
+        self.overdraft = overdraft
+
+        self.interest_rate = 0.04
+        self.branch = "Vijaynagar"
+    
+    def credit(self, value):
+        self.balance += value
+    
+    def debit(self, value):
+        self.balance -= value
+
+    def __str__(self):
+        return f"No.{self.account_no} with Total Balance(balance - overdraft) = Rs.{self.balance - self.overdraft}"
+
                     
 # Color class //
 class color():
@@ -56,6 +78,9 @@ class Point():
                 return 3
             else:
                 return 4
+            
+    def __str__(self):
+        return f"({self.p1}, {self.p2})
     
     def dist_origin(self):        # returns distance of the point from origin
         return round(pow((self.x**2 + self.y**2), 0.5), 3)
