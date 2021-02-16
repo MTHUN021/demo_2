@@ -23,7 +23,6 @@ class mobile_billing():
         return self.bill
 
 
-
 #Bank account class 
 class Bank_account():
 
@@ -110,8 +109,17 @@ class triangle():
     def circumference(self):
         return self.a + self.b + self.c
 
-t1 = triangle(3,4,5)
-print(t1.circumference())
+class rectangle():
+    def __init__(self, a,b):
+        self.a = a
+        self.b = b
+
+    def area(self):
+        return self.a * self.b
+    
+    def circumference(self):
+        return 2 * (self.a + self.b)
+
 
 #Class Box
 
@@ -126,3 +134,10 @@ class box():
     
     def display(self):
         print(f"Length = {self.length}, Breadth = {self.breadth}, Height = {self.height}")
+
+
+class ipaddress():
+     def __init__(self, address):
+         pass
+    
+    pass
