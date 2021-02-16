@@ -1,4 +1,5 @@
 #Mobile Billing customer class
+import webcolors
 class mobile_billing():
     def __init__(self, time, sms, service, carry_amt, addon):
         self.time = time            # total outgoing call time
@@ -54,11 +55,14 @@ class color():
         self.red = hex_value[0]
         self.green = hex_value[1]
         self.blue = hex_value[2]
+        self.hex_value = hex_value
     
     def form_color(self):
-        pass
-
-
+        try:
+            return webcolors.rgb_to_name(self.hex_value)
+        except ValueError:
+            print("Invalide color code")
+    
 
 # Point class
 class Point():
@@ -137,7 +141,15 @@ class box():
 
 
 class ipaddress():
-     def __init__(self, address):
-         pass
+     def __init__(self, int_address):
+         self.address = int_address
     
-    pass
+     def address_str(self):
+         s = ""
+         k = 3
+         while k >=0:
+            s += str((self.address // pow(256, k))%256) + "."
+            k -= 1
+
+         return s[:-1]
+
