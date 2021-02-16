@@ -86,8 +86,32 @@ class Point():
     def dist_origin(self):        # returns distance of the point from origin
         return round(pow((self.x**2 + self.y**2), 0.5), 3)
 
-class shape():
-    pass
+class circle():
+    def __init__(self, radius):
+        self.radius = radius
+        
+    def circumference(self):
+        return 2*3.141*self.radius
+    
+    def area(self):
+        return 3.141 * (self.radius ** 2)
+
+class triangle():
+    def __init__(self, a,b,c):
+        self.a = a
+        self.b = b
+        self.c = c
+    
+        self.s = (self.a + self.b + self.c)/2
+
+    def area(self):
+        return pow(self.s*(self.s-self.a)*(self.s-self.b)*(self.s-self.c), 0.5)
+    
+    def circumference(self):
+        return self.a + self.b + self.c
+
+t1 = triangle(3,4,5)
+print(t1.circumference())
 
 #Class Box
 
