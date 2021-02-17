@@ -77,6 +77,8 @@ class time:
 
 #Class Employee
 class Employee:
+    inc = 0
+    salary = 0
     def __init__(self, first, last, email):
         self.first = first
         self.last = last
@@ -90,11 +92,20 @@ class Employee:
 
 
 class Engineer(Employee):
-    def __init__(self,first,last, email, salary, interns=None):
+    def __init__(self,first,last, email, salary, interns=[]):
         super().__init__(first, last, email)
         self.salary = salary
         self.inc = 5
+        self.interns = interns
 
+    def add_int(self, n):
+        if n not in self.interns:
+            self.interns.append(n)
+
+    def rem_int(self,n):
+        if n not in self.interns:
+            self.interns.remove(n)
+        
 
 class Manager(Employee):
     def __init__(self,first,last, email, salary, emps=[]):
@@ -109,7 +120,11 @@ class Manager(Employee):
     
     def rem_eng(self, n):
         if n in self.emps:
-            self.remove(n)
+            self.emps.remove(n)
+    
+    def dis_emps(self):
+        for e in self.emps:
+            print(f"Manager {self} has {e} as his employee")
     
 
 class Trainee(Employee):
@@ -118,8 +133,4 @@ class Trainee(Employee):
         self.salary = salary
         self.inc = 0
 
-
-e1 = Engineer("Mithun", "Ramesh", "mithun.mr@ltts.com", 10000)
-print(e1)
-e1.apply_raise()
-print(e1.salary)
+class 
