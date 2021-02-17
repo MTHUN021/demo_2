@@ -116,7 +116,7 @@ class Trainee(Employee):
     def __init__(self,first,last, email, salary):
         super().__init__(first, last, email)
         self.salary = salary
-        self,inc = 0
+        self.inc = 0
 
 
 e1 = Engineer("Mithun", "Ramesh", "mithun.mr@ltts.com", 10000)
