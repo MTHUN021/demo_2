@@ -1,3 +1,4 @@
+'''
 class complex():
     def __init__(self, r, i):
         self.r = r
@@ -26,3 +27,13 @@ def iptoint(ip):
         return res
 
 print(iptoint("192.168.1.251"))
+'''
+
+import json
+
+string = '''{"name":"Python", "inventor": "guido-van-rossum", "version":"3.9"}'''
+d = json.loads(string)
+#print(d["inventor"])
+
+d1 = {"name":"Python", "time":"1990", "with":"C"}
+

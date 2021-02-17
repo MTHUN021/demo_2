@@ -1,6 +1,6 @@
 #Mobile Billing customer class
 import webcolors
-class mobile_billing():
+class mobile_billing:
     def __init__(self, time, sms, service, carry_amt, addon):
         self.time = time            # total outgoing call time
         self.sms = sms              # total outgoing sms
@@ -25,7 +25,7 @@ class mobile_billing():
 
 
 #Bank account class 
-class Bank_account():
+class Bank_account:
 
     def __init__(self, account_no, balance, overdraft):
         self.account_no = account_no
@@ -49,7 +49,7 @@ class Bank_account():
 
                     
 # Color class
-class color():
+class color:
     
     def __init__(self, hex_value):
         self.red = hex_value[0]
@@ -65,7 +65,7 @@ class color():
     
 
 # Point class
-class Point():
+class Point:
 
     def __init__(self, x, y):
         self.x = x                # X Co-ordinate
@@ -89,8 +89,9 @@ class Point():
     def dist_origin(self):        # returns distance of the point from origin
         return round(pow((self.x**2 + self.y**2), 0.5), 3)
 
+
 #Class Circle/Rectangle/Triangle
-class circle():
+class circle:
     def __init__(self, radius):
         self.radius = radius
         
@@ -100,7 +101,7 @@ class circle():
     def area(self):
         return 3.141 * (self.radius ** 2)
 
-class triangle():
+class triangle:
     def __init__(self, a,b,c):
         self.a = a
         self.b = b
@@ -127,7 +128,7 @@ class rectangle():
 
 
 #Class Box
-class box():
+class box:
     def __init__(self, length, breadth, height):
         self.length = length
         self.breadth = breadth
@@ -140,7 +141,7 @@ class box():
         print(f"Length = {self.length}, Breadth = {self.breadth}, Height = {self.height}")
 
 #class IP address
-class ipaddress():
+class ipaddress:
     def __init__(self, int_address):
          self.address = int_address
 
