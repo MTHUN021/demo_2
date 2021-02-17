@@ -37,3 +37,17 @@ d = json.loads(string)
 
 d1 = {"name":"Python", "time":"1990", "with":"C"}
 
+class A:
+    def __init__(self,x):
+        self.x = x
+    
+    def display(self):
+        print(self.x)
+
+class B(A):
+    pass
+
+b1 = B(1)
+#b1.display()
+#print(B.mro())  # method reservation order
+
