@@ -133,4 +133,3 @@ class Trainee(Employee):
         self.salary = salary
         self.inc = 0
 
-class 
