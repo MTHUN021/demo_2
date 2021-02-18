@@ -215,6 +215,11 @@ class Bank_account_with_exp(Bank_account):
             raise InsufficientBalance(value)
         self.balance -= value
     
+    def credit(self, value):
+        if self.balance + value > 10000000:
+            raise LimitExceeded(value)
+        self.balance += value
+    
 
 class InsufficientBalance(Exception):
     def __init__(self, value):
@@ -223,6 +228,11 @@ class InsufficientBalance(Exception):
     
     def __str__(self):
         return f" Can't debit Rs.{self.value} Insufficient Balance!!!"
+
+class LimitExceeded(InsufficientBalance):
+
+    def __str__(self):
+        return f"Can't credit more than Rs.{self.value} in a single day"
         
 
 class mobile_billing_with_exp(mobile_billing):
@@ -231,12 +241,12 @@ class mobile_billing_with_exp(mobile_billing):
     
     def update_sms(self, n):
         if self.sms >= 100 and self.service == "PREPAID":
-            raise ServiceExpired(self.sms)
+            raise SmsExceeded(self.sms)
         self.sms += n
     
     def update_time(self, n):
         if self.time > 3600 and self.service == "PREPAID":
-            raise ServiceExpired(self.time)
+            raise CallExceeded(self.time)
         self.time += n
     
     def make_call(self):
@@ -244,6 +254,11 @@ class mobile_billing_with_exp(mobile_billing):
             raise ServiceExpired(self.bill)
         pass
 
+    def bill_pay(self, n):
+        if self.bill == 0:
+            raise BillPaid(self.bill)
+        self.bill -= n
+        
 class ServiceExpired(Exception):
     def __init__(self, n):
         super().__init__()
@@ -251,3 +266,15 @@ class ServiceExpired(Exception):
     def __str__(self):
         if self.val:
             return f"Can't make call/sms/totalbill limit-{self.val} exceeded "
+
+class SmsExceeded(ServiceExpired):
+    def __str__(self):
+        return f"Can't send sms {self.val}sms is the max limit"
+
+class CallExceeded(ServiceExpired):
+    def __str__(self):
+        return f"Can't make call {self.val}seconds is the max limit"
+
+class BillPaid(ServiceExpired):
+    def __str__(self):
+        return f"Bill amount paid Rs{self.bill} is the outstanding amount"
