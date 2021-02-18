@@ -15,6 +15,12 @@ class mobile_billing:
         else:
             self.callrate = 0.005
             self.smsrate = 0.5
+    
+    def update_time(self, n):
+        self.time += n
+    
+    def update_sms(self, n):
+        self.sms += n
 
     def total_bill(self):
 
@@ -22,7 +28,6 @@ class mobile_billing:
         if self.addon:
             self.bill = self.bill +  10
         return self.bill
-
 
 #Bank account class 
 class Bank_account:

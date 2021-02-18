@@ -206,4 +206,48 @@ class Distance:
             return True
         return False
 
+class Bank_account_with_exp(Bank_account):
+    def __init__(self, account_no, balance, overdraft):
+        super().__init__(account_no, balance, overdraft)
+    
+    def debit(self, value):
+        if self.balance < value:
+            raise InsufficientBalance(value)
+        self.balance -= value
+    
 
+class InsufficientBalance(Exception):
+    def __init__(self, value):
+        super().__init__()
+        self.value = value
+    
+    def __str__(self):
+        return f" Can't debit Rs.{self.value} Insufficient Balance!!!"
+        
+
+class mobile_billing_with_exp(mobile_billing):
+    def __init__(self, time, sms, service, carry_amt, addon):
+        super().__init__(time, sms, service, carry_amt, addon)
+    
+    def update_sms(self, n):
+        if self.sms >= 100 and self.service == "PREPAID":
+            raise ServiceExpired(self.sms)
+        self.sms += n
+    
+    def update_time(self, n):
+        if self.time > 3600 and self.service == "PREPAID":
+            raise ServiceExpired(self.time)
+        self.time += n
+    
+    def make_call(self):
+        if self.bill > 0:
+            raise ServiceExpired(self.bill)
+        pass
+
+class ServiceExpired(Exception):
+    def __init__(self, n):
+        super().__init__()
+        self.val = n
+    def __str__(self):
+        if self.val:
+            return f"Can't make call/sms/totalbill limit-{self.val} exceeded "
