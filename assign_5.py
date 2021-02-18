@@ -174,7 +174,7 @@ class StackError(Exception):
         if self.a == 0:
             return f"Can't remove {self.n} as pop is empty or {self.n} not found"
         return f"Can't push {self.n}, Stack full"
-
+#Class Distance
 class Distance:
     def __init__(self, feet, inches):
         self.feet = feet
@@ -205,7 +205,7 @@ class Distance:
         if self.feet < other.feet:
             return True
         return False
-
+#Class Bank_Account
 class Bank_account_with_exp(Bank_account):
     def __init__(self, account_no, balance, overdraft):
         super().__init__(account_no, balance, overdraft)
@@ -234,7 +234,7 @@ class LimitExceeded(InsufficientBalance):
     def __str__(self):
         return f"Can't credit more than Rs.{self.value} in a single day"
         
-
+#Class Mobile_Customer
 class mobile_billing_with_exp(mobile_billing):
     def __init__(self, time, sms, service, carry_amt, addon):
         super().__init__(time, sms, service, carry_amt, addon)
@@ -277,4 +277,8 @@ class CallExceeded(ServiceExpired):
 
 class BillPaid(ServiceExpired):
     def __str__(self):
-        return f"Bill amount paid Rs{self.bill} is the outstanding amount"
+        return f"Bill amount paid Rs{self.val} is the outstanding amount"
+
+#Class Shape
+#Class Saving/Current
+
