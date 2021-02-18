@@ -51,3 +51,36 @@ b1 = B(1)
 #b1.display()
 #print(B.mro())  # method reservation order
 
+class MyTimeError(Exception):
+    def __init__(self,mm,ss):
+        super().__init__()
+        self.mm=mm
+        self.ss=ss
+    def __str__(self):
+        if self.mm > 59:
+            return "Invalid Minutes:{0}".format(self.mm)
+        elif self.ss > 59:
+            return "Invalid Seconds:{0}".format(self.ss)
+
+class MyTime:
+    def __init__(self,hh,mm,ss):
+        if mm > 59 or ss > 59:
+            raise MyTimeError(mm,ss)
+        self.hh=hh
+        self.mm=mm
+        self.ss=ss
+
+    def update(self,hh,mm,ss):
+        if mm > 59 or ss > 59:
+            raise MyTimeError(mm,ss)
+        self.hh=hh
+        self.mm=mm
+        self.ss=ss
+    def display(self):
+        print("{0}:{1}:{2}".format(self.hh,self.mm,self.ss))
+
+
+try:
+    t1 = MyTime(10,20,72)
+except MyTimeError as te:
+    print(te)
