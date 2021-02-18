@@ -132,4 +132,27 @@ class Trainee(Employee):
         super().__init__(first, last, email)
         self.salary = salary
         self.inc = 0
+#Stack class
+class Stack:
+    def __init__(self, elements=None, max_ele):
+        self.max_ele = max_ele
+        if elements is None:
+            self.elements = []
+        else:
+            self.elements = elements
+    
+    def pop_ele(self,n):
+        pass
+    
+    def push_ele(self, n):
+        if self.isfull():
+            raise 
 
+    def isempty(self):
+        if len(self.elements) == 0 or self.elements == None:
+            return True
+        else:
+            return False
+
+    def isfull(self):
+        pass
