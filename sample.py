@@ -79,8 +79,17 @@ class MyTime:
     def display(self):
         print("{0}:{1}:{2}".format(self.hh,self.mm,self.ss))
 
-
+'''
 try:
     t1 = MyTime(10,20,72)
 except MyTimeError as te:
     print(te)
+
+s1 = Stack(5)
+print(s1.elements)
+try:
+    s1.pop_ele(6)
+    print(s1.elements)
+except StackError as s:
+    print(s)
+'''

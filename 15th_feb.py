@@ -39,6 +39,8 @@ class Bank_account:
         self.balance += value
     
     def debit(self, value):
+        if self.balance <= 0:
+            raise Exception
         self.balance -= value
     
     def comp_int(self, n):

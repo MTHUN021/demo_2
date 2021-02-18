@@ -38,7 +38,7 @@ class complex:
         return False
     
     def __le__(self, other):
-        if self.mod_comp() < other.mod_comp():
+        if self.mod_comp() <= other.mod_comp():
             return True
         return False
     
@@ -132,27 +132,81 @@ class Trainee(Employee):
         super().__init__(first, last, email)
         self.salary = salary
         self.inc = 0
+
 #Stack class
 class Stack:
-    def __init__(self, elements=None, max_ele):
+    def __init__(self, max_ele, elements=None):
         self.max_ele = max_ele
         if elements is None:
             self.elements = []
         else:
             self.elements = elements
     
+    def __str__(self):
+        return f"{self.elements}"
+    
     def pop_ele(self,n):
-        pass
+        if self.isempty() or n not in self.elements:
+            raise StackError(n,0)
+        self.elements.remove(n)
     
     def push_ele(self, n):
         if self.isfull():
-            raise 
+            raise StackError(n, self.max_ele)
+        self.elements.append(n)
 
     def isempty(self):
-        if len(self.elements) == 0 or self.elements == None:
+        if len(self.elements) == 0 or self.elements is None:
             return True
-        else:
-            return False
+        return False
 
     def isfull(self):
-        pass
+        if len(self.elements) == self.max_ele:
+            return True
+        return False
+class StackError(Exception):
+    def __init__(self,n,a):
+        super().__init__()
+        self.n = n
+        self.a = a
+    def __str__(self):
+        if self.a == 0:
+            return f"Can't remove {self.n} as pop is empty or {self.n} not found"
+        return f"Can't push {self.n}, Stack full"
+
+class Distance:
+    def __init__(self, feet, inches):
+        self.feet = feet
+        self.inches = inches
+        if self.inches >= 12:
+            self.feet += self.inches // 12
+            self.inches %= 12
+    
+    def __add__(self, other):
+        a = self.feet + other.feet
+        b = self.inches + other.inches
+        return Distance(a, b)
+
+    def __str__(self):
+        return f"{self.feet}Feet {self.inches} inches"
+    
+    def __eq__(self, other):
+        if self.feet == other.fee and self.inches == other.inches:
+            return True
+        return False
+
+    def __gt__(self, other):
+        if self.feet > other.feet:
+            return True
+        return False
+    
+    def __le__(self, other):
+        if self.feet < other.feet:
+            return True
+        return False
+
+    
+d1 = Distance(11,14)
+d2 = Distance(3,5)
+d3 = d1 + d2
+print(d3)
