@@ -45,7 +45,7 @@ class complex:
     
 #Class Time
 class time:
-    def __init__(self, h,m,s):
+    def __init__(self, h, m, s):
         self.hr = h
         self.min = m
         self.sec = s
@@ -281,4 +281,6 @@ class BillPaid(ServiceExpired):
 
 #Class Shape
 #Class Saving/Current Account
+
+
 
