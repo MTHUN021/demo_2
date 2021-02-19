@@ -97,13 +97,13 @@ class Point:
         return round(pow((self.x**2 + self.y**2), 0.5), 3)
 
 
-#Class Circle/Rectangle/Triangle
+#Class Circle/Rectangle/Triangle        
 class circle:
     def __init__(self, radius):
         self.radius = radius
         
-    def circumference(self):
-        return 2*3.141*self.radius
+    def circumference(self):                           #An example of Polymorphism
+        return 2*3.141*self.radius                     #Operator overloading not allowed,  function defined latest/recent will be taken 
     
     def area(self):
         return 3.141 * (self.radius ** 2)
@@ -152,7 +152,7 @@ class ipaddress:
     def __init__(self, int_address):
          self.address = int_address
 
-    def address_str(self):
+    def address_str(self):            #converts integer to "a.b.c.d format"
         s = ""
         k = 3
         while k >=0:
@@ -161,3 +161,4 @@ class ipaddress:
 
         return s[:-1]
                                                                                                      
+                                                                                                

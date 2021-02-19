@@ -280,5 +280,5 @@ class BillPaid(ServiceExpired):
         return f"Bill amount paid Rs{self.val} is the outstanding amount"
 
 #Class Shape
-#Class Saving/Current
+#Class Saving/Current Account
 
