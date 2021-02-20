@@ -1,4 +1,4 @@
-'''
+
 class complex():
     def __init__(self, r, i):
         self.r = r
@@ -27,7 +27,7 @@ def iptoint(ip):
         return res
 
 print(iptoint("192.168.1.251"))
-'''
+
 
 import json
 
@@ -105,12 +105,20 @@ except ValueError as e:
     print(f"{e} is out of range")
 
 '''
-
 import logging
 
-logging.warning('classical warning')
+logging.basicConfig(level=logging.INFO)
+
+
+logging.warning('classical warning')           # Warning is default without any level
 logging.info('i told u so')
 logging.debug("This is a debug")
 logging.error("This is an error")
 logging.critical('This is critical')
+
+
+
+logging.basicConfig(filename='app.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
+logging.warning('This will get logged to a file')
+
 
