@@ -281,3 +281,43 @@ class BillPaid(ServiceExpired):
 
 #Class Shape
 #Class Saving/Current Account
+from abc import ABCMeta 
+from abc import abstractmethod
+class Shape(metaclass=ABCMeta):
+    @abstractmethod
+    def area(self):
+        pass
+    @abstractmethod
+    def circumference(self):
+        pass
+
+class Polygon(Shape):
+    def __init__(self,n):
+        self.nsides=n
+
+class Triangle(Polygon):
+    def __init__(self,a,b,c):
+        super().__init__(3)
+        self.a=a
+        self.b=b
+        self.c=c
+    def area(self):
+        print("Triangle--area")
+        pass
+    def circumference(self):
+        print("Triangle--circumference")
+        return self.a+self.b+self.c
+    
+
+class Rectangle(Polygon):
+    def __init__(self,l,b):
+        super().__init__(3)
+        self.l=l
+        self.b=b
+    def area(self):
+        print("Rectanlge--area")
+        return self.l*self.b
+    def circumference(self):
+        print("Rectanlge--circumference")
+        return 2*(self.l+self.b)
+
