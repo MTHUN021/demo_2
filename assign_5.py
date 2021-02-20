@@ -320,8 +320,3 @@ class Rectangle(Polygon):
     def circumference(self):
         print("Rectanlge--circumference")
         return 2*(self.l+self.b)
-
-c1 = complex(2,2)
-c2 = complex(1,3)
-
-print(c1 + c2)

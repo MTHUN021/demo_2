@@ -1,6 +1,6 @@
 1) Implement pep8 standards ----> pep8.com
 2) Implement IP class with Hexadecimal
 3) Auto Generated ID using class
-4) PythonTutor.com
+4) PythonTutor.com and sololearn
 5) Pylint 
 6) Pytesting
