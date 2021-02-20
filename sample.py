@@ -92,4 +92,25 @@ try:
     print(s1.elements)
 except StackError as s:
     print(s)
+
+def compute(x):
+    if x > 100:
+        raise ValueError(x)
+
+    return x**2
+
+try:
+    print(compute(101))
+except ValueError as e:
+    print(f"{e} is out of range")
+
 '''
+
+import logging
+
+logging.warning('classical warning')
+logging.info('i told u so')
+logging.debug("This is a debug")
+logging.error("This is an error")
+logging.critical('This is critical')
+
