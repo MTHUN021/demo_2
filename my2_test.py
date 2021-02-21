@@ -14,5 +14,8 @@ def get_c2():
 def test_add(get_c1, get_c2):
     res = get_c1 + get_c2
     res1 = get_c1 * get_c2
+    res2 = get_c1 - get_c2
     assert str(res) == "3 + 5j"
     assert str(res1) == "-4 + 8j"
+    assert str(res2) == "1 -1j"
+
