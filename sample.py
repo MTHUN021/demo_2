@@ -1,4 +1,4 @@
-
+'''
 class complex():
     def __init__(self, r, i):
         self.r = r
@@ -27,7 +27,7 @@ def iptoint(ip):
         return res
 
 print(iptoint("192.168.1.251"))
-
+'''
 
 import json
 
@@ -36,7 +36,7 @@ d = json.loads(string)
 #print(d["inventor"])
 
 d1 = {"name":"Python", "time":"1990", "with":"C"}
-
+'''
 class A:
     def __init__(self,x):
         self.x = x
@@ -79,7 +79,7 @@ class MyTime:
     def display(self):
         print("{0}:{1}:{2}".format(self.hh,self.mm,self.ss))
 
-'''
+
 try:
     t1 = MyTime(10,20,72)
 except MyTimeError as te:
@@ -104,7 +104,7 @@ try:
 except ValueError as e:
     print(f"{e} is out of range")
 
-'''
+
 import logging
 
 logging.basicConfig(level=logging.INFO)
@@ -122,3 +122,34 @@ logging.basicConfig(filename='app.log', filemode='w', format='%(name)s - %(level
 logging.warning('This will get logged to a file')
 
 
+'''
+
+def add_1(a, b, val):
+    return val(a, b)
+    
+def add(a, b):
+    print(a+b)
+
+def outer_func(msg):
+    def inner_func():
+        print(msg)
+    return inner_func
+
+
+#Decorators are the ones which take functions as an args and returns func
+
+def decorator_func(org):
+    def wrapper():
+        return org()
+    return wrapper
+
+
+@decorator_func                  #Equivalent of doing disp = decorator_func(disp)
+def disp():
+    print("printing here")
+
+
+def display(*args, **kwargs):
+    pass
+
+display(1,2,3,4,5, x=1, y=2)

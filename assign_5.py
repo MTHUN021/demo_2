@@ -1,8 +1,8 @@
 from assign_4 import Bank_account, mobile_billing
 #Class Complex
-class complex:
+class complex_no:
 
-    
+
     def __init__(self, real, imaginary):
         self.real = real
         self.imaginary = imaginary
@@ -17,19 +17,19 @@ class complex:
     def __add__(self, other):
         r = self.real + other.real
         i = self.imaginary + other.imaginary
-        return complex(r, i)
+        return complex_no(r, i)
     
 
     def __sub__(self, other):
         r = self.real - other.real
         i = self.imaginary - other.imaginary
-        return complex(r, i)
+        return complex_no(r, i)
     
 
     def __mul__(self, other):
         r = self.real * other.real - self.imaginary * other.imaginary
         i = self.real * other.imaginary + self.imaginary * other.real
-        return complex(r, i)
+        return complex_no(r, i)
     
 
     def __eq__(self, other):

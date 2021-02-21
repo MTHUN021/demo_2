@@ -5,21 +5,19 @@ import pytest
 
 @pytest.fixture
 def get_c1():
-    return complex(2,2)
+    return complex_no(2,2)
 
 
 @pytest.fixture
 def get_c2():
-    return complex(1,3)
+    return complex_no(1,3)
 
 
-def test_add(get_c1, get_c2):
+def test_func(get_c1, get_c2):
     res = get_c1 + get_c2
-    res1 = get_c1 * get_c2
-    res2 = get_c1 - get_c2
-    assert str(res) == "3 + 5j"
-    assert str(res1) == "-4 + 8j"
-    assert str(res2) == "1 -1j"
+    
+    assert complex_no(3, 5) == res
+    pass
 
 
 
