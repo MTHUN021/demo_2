@@ -1,4 +1,4 @@
-'''
+
 class complex():
     def __init__(self, r, i):
         self.r = r
@@ -14,7 +14,7 @@ c2 = complex(4,5)
 
 c3 = c1 + c2
 
-
+'''
 def iptoint(ip):
     if type(ip) == str:
         lst = ip.split(".")
@@ -36,7 +36,7 @@ d = json.loads(string)
 #print(d["inventor"])
 
 d1 = {"name":"Python", "time":"1990", "with":"C"}
-'''
+
 class A:
     def __init__(self,x):
         self.x = x
@@ -79,7 +79,7 @@ class MyTime:
     def display(self):
         print("{0}:{1}:{2}".format(self.hh,self.mm,self.ss))
 
-
+'''
 try:
     t1 = MyTime(10,20,72)
 except MyTimeError as te:
@@ -121,35 +121,64 @@ logging.critical('This is critical')
 logging.basicConfig(filename='app.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
 logging.warning('This will get logged to a file')
 
-
 '''
 
-def add_1(a, b, val):
-    return val(a, b)
+class travel:
+
     
-def add(a, b):
-    print(a+b)
-
-def outer_func(msg):
-    def inner_func():
-        print(msg)
-    return inner_func
-
-
-#Decorators are the ones which take functions as an args and returns func
-
-def decorator_func(org):
-    def wrapper():
-        return org()
-    return wrapper
+    def __init__(self, source, destination, distance, time, privilege):
+        self.source = source
+        self.destination = destination
+        self.distance = distance
+        self.time = time
+        self.privilege = privilege
+        self.cost = 0
 
 
-@decorator_func                  #Equivalent of doing disp = decorator_func(disp)
-def disp():
-    print("printing here")
+    def travel_fare(self):
+        if self.privilege == "FIRST CLASS":
+            self.cost = self.distance * 1000
+        elif self.privilege == "ECONOMY":
+            self.cost = self.distance * 200
+        return self.cost
 
 
-def display(*args, **kwargs):
-    pass
+#t1 = travel("New York", "Beijing", 8000, 10, "ECONOMY")
+#t2 = travel("London", "New York", 6000, 6, "FIRST CLASS")
+#t3 = travel("Bengaluru", "Abu Dhabi", 3000, 3, "BUSINESS CLASS")
+    
 
-display(1,2,3,4,5, x=1, y=2)
+class PNR:
+
+    def __init__(self, PNR_no, ticket):
+        self.PNR_no = PNR_no
+        self.ticket = ticket
+    
+    def __str__(self):
+        return f"PNR NO --> [{self.PNR_no}] Travelling From {self.ticket.source} To {self.ticket.destination}"
+
+#p1 = PNR("24613", t1)
+#print(p1)
+
+
+destinations = {1:"New York", 2:"London", 3:"Beijing", 4:"Tokyo", 5:"Bengaluru", 6:"Abu Dhabi"}
+distance_time = [["New York", "London"]] # Source to Destination with 8000Km
+
+def main():
+    src = input("FROM: ")
+    dest = input("TO: ")
+    dist = distance_time[[src, dest]][0]
+    ti = distance_time[[src, dest]][1]
+    pri = input("FIRST CLASS OR ECONOMY")
+    
+    t1 = travel(src, dest, dist, ti, pri)
+    p1 = PNR(3948, t1)
+    print(f"Booking Confirmed with Total Amount {p1.ticket.travel_fare()} press YES OR NO To Confirm")
+    if input("") == "YES":
+        print(f"TICKET CONFIRMED for {p1}")
+    else:
+        print(f"BOOKING CANCELLED")
+
+
+if __name__ == "main":
+    main()
