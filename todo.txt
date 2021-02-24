@@ -18,7 +18,7 @@ Stages
 Requirements and Decommissioning
     High Level and Low Level
 
-UML
+UML(Unified Modified Language)
     High Level and Low Level
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -40,3 +40,17 @@ Examples Taken Car and Mobile
 Making a Report using a Template.
 
 6. 4 W'S and 1 H
+    High level and Low Level.
+
+7. Design 
+    GANTT Chart
+    A visual representations
+
+8. V, Agile model, CI-CD and Testing
+
+(2 structural and 2 behavorial) UML >>>>>>>>>>> Design and Architecture
+    1 structural and behavorial for every features and 1 in High and 1 in Low Level
+    Comprehensive in features
+    Table of Contents formatting
+
+Test and Planning, Scalability, Product Developmental life Cycle
