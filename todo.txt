@@ -4,3 +4,39 @@
 4) PythonTutor.com and sololearn
 5) Pylint 
 6) Pytesting
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SDLC(System Development Life Cycle) -PSP
+
+Life Cycle
+        Inception to >>>>>>>>> Decommissioning
+
+Stages
+    Impact amd Relevance
+
+Requirements and Decommissioning
+    High Level and Low Level
+
+UML
+    High Level and Low Level
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Examples Taken Car and Mobile 
+1. Needs
+
+2. Market analysis (Demand, Price range)
+
+3. Technical Feasibility analysis ---> Technology exists or not (3 Products to compare)
+
+4. Product requirements (Low Requirements align to High Level)
+
+    High Level are broad level/common Features
+    Low Level are specific/exclusivity/Luxury Features
+
+5. SWOT analysis (Strength, Weakness, Oppurtunities and Threat)
+
+Making a Report using a Template.
+
+6. 4 W'S and 1 H

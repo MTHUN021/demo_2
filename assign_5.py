@@ -185,7 +185,9 @@ class Stack:
         if self.isempty():
             raise StackError(None, 0)
         # Removing the highest index element
+        a = self.elements[-1]
         self.elements = self.elements[:-1]
+        return a
     
 
     def push_ele(self, n):
@@ -243,7 +245,7 @@ class Distance:
     
 
     def __eq__(self, other):
-        if self.feet == other.fee and self.inches == other.inches:
+        if self.feet == other.feet and self.inches == other.inches:
             return True
         return False
 
