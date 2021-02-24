@@ -181,10 +181,11 @@ class Stack:
         return f"{self.elements}"
     
 
-    def pop_ele(self,n):
-        if self.isempty() or n not in self.elements:
-            raise StackError(n,0)
-        self.elements.remove(n)
+    def pop_ele(self):
+        if self.isempty():
+            raise StackError(None, 0)
+        # Removing the highest index element
+        self.elements = self.elements[:-1]
     
 
     def push_ele(self, n):
@@ -203,19 +204,22 @@ class Stack:
         if len(self.elements) == self.max_ele:
             return True
         return False
+        
 class StackError(Exception):
 
 
-    def __init__(self,n,a):
+    def __init__(self, n, a):
         super().__init__()
-        self.n = n
         self.a = a
+        self.n = n
 
 
     def __str__(self):
         if self.a == 0:
-            return f"Can't remove {self.n} as pop is empty or {self.n} not found"
-        return f"Can't push {self.n}, Stack full"
+            return f"Can't remove as stack is Empty"
+        return f"Can't push {self.n}, as Stack is full"
+
+
 #Class Distance
 class Distance:
 
