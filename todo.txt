@@ -15,7 +15,7 @@ Life Cycle
 Stages
     Impact amd Relevance
 
-Requirements and Decommissioning
+Requirements to Decommissioning
     High Level and Low Level
 
 UML(Unified Modified Language)
@@ -23,12 +23,13 @@ UML(Unified Modified Language)
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Examples Taken Car and Mobile 
+Examples Taken are Car and Mobile 
 1. Needs
 
 2. Market analysis (Demand, Price range)
 
 3. Technical Feasibility analysis ---> Technology exists or not (3 Products to compare)
+    My product comparison
 
 4. Product requirements (Low Requirements align to High Level)
 
@@ -51,6 +52,25 @@ Making a Report using a Template.
 (2 structural and 2 behavorial) UML >>>>>>>>>>> Design and Architecture
     1 structural and behavorial for every features and 1 in High and 1 in Low Level
     Comprehensive in features
-    Table of Contents formatting
+    Table of Contents formatting 
 
 Test and Planning, Scalability, Product Developmental life Cycle
+    High Level Testing (System Level Testing)
+    Low Level Testing (Unit Testing)
+        Unit Test Plan
+        Integration Testing
+        following the V model
+            UTP
+                TEST ID |  TEST DESCRIPTION | EXEPECTED I/P | EXEPECTED O/P | ACTUAL O\P |
+
+        lr_sdlc_#psno
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
