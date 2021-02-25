@@ -66,11 +66,51 @@ Test and Planning, Scalability, Product Developmental life Cycle
         lr_sdlc_#psno
 
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------'
 
+Do not use information from external source without referencing.
 
+And the document history must mention the author
 
+Table of Contents.
 
+Header and Foot must be present
 
+Product Lifecycle (product being produced)
 
+Need 
+    Introduction
+    history
+    Trends
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Feasibility
+    Technical
+    Market analysis
+    Segment and Volume
+    Feature analysis
+    Competition
+    Government policies
+    
+    These must include a reference.
+
+My product  
+    High and Low level
+
+SWOT analysis
+    using the Template
+
+4 W'S and 1H
+
+Requirements
+    High Level and Low level
+
+Planning
+    GANTT Chart
+
+Design Architecture
+    High /System level
+    Low level / unit level
+
+Test Plan
+    High Level 
+    Low Level
