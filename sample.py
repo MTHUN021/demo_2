@@ -123,6 +123,7 @@ logging.warning('This will get logged to a file')
 
 '''
 
+'''
 import random
 class travel:
 
@@ -204,4 +205,7 @@ if __name__ == "__main__":
         elif n == -1:
             break
 
-    
+'''
+
+
+
